@@ -26,28 +26,28 @@
         };
 
         tp_qq: tapdance_0 {
-            compatible = "zmk,behavior-tapdance";
+            compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp SQT>, <&kp DQT>;
         };
 
         tp_cl: tapdance_1 {
-            compatible = "zmk,behavior-tapdance";
+            compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp COMMA>, <&kp LT>;
         };
 
         tp_dg: tapdance_2 {
-            compatible = "zmk,behavior-tapdance";
+            compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp KP_DOT>, <&kp GT>;
         };
 
         tp_sq: tapdance_3 {
-            compatible = "zmk,behavior-tapdance";
+            compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp FSLH>, <&kp QMARK>;
