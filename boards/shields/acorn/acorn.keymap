@@ -24,6 +24,43 @@
             tapping-term-ms = <200>;
             bindings = <&mo>, <&tog>;
         };
+
+        tapdance_quotes: tapdance {
+        compatible = "zmk,behavior-tapdance";
+        label = "TAPDANCE_QUOTES";
+        tapdance-bindings = <
+            &kp SQT   // Single tap for single quote (')
+            &kp DQT   // Double tap for double quote (")
+            >;
+        };
+
+        tapdance_comma_less: tapdance {
+            compatible = "zmk,behavior-tapdance";
+            label = "TAPDANCE_COMMA_LESS";
+            tapdance-bindings = <
+                &kp COMMA   // Single tap for comma (`,`)
+                &kp LESS    // Double tap for less than (`<`)
+            >;
+        };
+
+        tapdance_dot_greater: tapdance {
+            compatible = "zmk,behavior-tapdance";
+            label = "TAPDANCE_DOT_GREATER";
+            tapdance-bindings = <
+                &kp DOT     // Single tap for dot ('.')
+                &kp GREATER // Double tap for greater than (`>`)
+            >;
+        };
+
+        tapdance_slash_question: tapdance {
+        compatible = "zmk,behavior-tapdance";
+        label = "TAPDANCE_SLASH_QUESTION";
+        tapdance-bindings = <
+            &kp SLASH      // Single tap for forward slash (/)
+            &kp QUESTION  // Double tap for question mark (?)
+            >;
+        };
+   
     };
 
     keymap {
@@ -37,58 +74,51 @@
 // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
 // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
 //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
-            bindings = <
-&kp TAB     &kp Q   &kp W       &kp E       &kp R       &kp T                               &kp Y   &kp U    &kp I     &kp O   &kp P    &kp BSPC
-&kp LCTRL   &kp A   &kp S       &kp D       &kp F       &kp G                               &kp H   &kp J    &kp K     &kp L   &kp SEMI &kp SQT
-&kp LSHFT   &kp Z   &kp X       &kp C       &kp V       &kp B                               &kp N   &kp M    &kp COMMA &kp DOT &kp FSLH &kp ESC
-                                &kp LGUI    MO_TOG(1)   &kp SPACE                           &kp RET MO_TOG(2)    &kp LALT
+            bindings = < 
+&kp TAB     &kp Q   &kp W       &kp E       &kp R       &kp T                               &kp Y   &kp U     &kp I                 &kp O                   &kp P                       &kp BSPC
+&kp LCTRL   &kp A   &kp S       &kp D       &kp F       &kp G                               &kp H   &kp J     &kp K                 &kp L                   &kp SEMI                    &tapdance_quotes
+&kp LSHFT   &kp Z   &kp X       &kp C       &kp V       &kp B                               &kp N   &kp M     &tapdance_comma_less  &tapdance_dot_greater   &tapdance_slash_question    &kp ESC
+                                &kp LGUI    MO_TOG(1)   &kp SPACE                           &kp RET MO_TOG(2) &kp LALT
             >;
         };
 
         lower_layer {
             display-name = "lower";
 // -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
+// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
 // |      |  6  |  7  |  8  |  9  |  0  |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |  !  |  @  |  #  |  $  |  %  |   |  _  |  +  |  {  |  }  | "|" |  ~   |
+// | SHFT |  1  |  2  |  3  |  4  |  5  |   |  _  |  +  |  {  |  }  | "|" |  ~   |
 //                    | GUI |tog 0| SPC |   | ENT |     | ALT |
             bindings = <
-&kp TAB    &kp F1       &kp F2       &kp F3       &kp F4       &kp F5                       &kp F6        &kp F7        &kp F8      &kp F9      &kp F10     &kp BSPC
-&kp LCTRL  &kp F11      &kp F12      &trans       &trans       &trans                       &kp MINUS     &kp EQUAL     &kp LBKT    &kp RBKT    &kp BSLH    &kp GRAVE
-&kp LSHFT  &kp EXCL     &kp AT       &kp HASH     &kp DLLR     &kp PRCNT                    &kp UNDER     &kp PLUS      &kp LBRC    &kp RBRC    &kp PIPE    &kp TILDE
-                                     &kp LGUI     &tog 0       &kp SPACE                    &kp RET       &trans        &kp LALT
+&kp TAB    &kp EXCL     &kp AT       &kp HASH     &kp DLLR     &kp PRCNT                    &kp CARET     &kp AMPS      &kp ASTRK   &kp LPAR    &kp RPAR    &kp BSPC
+&kp LCTRL  &kp N6       &kp N7       &kp N8       &kp N9       &kp N0                       &kp MINUS     &kp EQUAL     &kp LBKT    &kp RBKT    &kp BSLH    &kp GRAVE
+&kp LSHFT  &kp N1       &kp N2       &kp N3       &kp N4       &kp N5                       &kp UNDER     &kp PLUS      &kp LBRC    &kp RBRC    &kp PIPE    &kp TILDE
+                                     &kp LGUI     &to 0        &kp SPACE                    &kp RET       &to 0         &kp LALT
             >;
         };
 
         raise_layer {
             display-name = "raise";
 // -----------------------------------------------------------------------------------------
-// |  TAB |  F1 |  F2 |  F3 |  F4 |  F5 |   |  F6 |     |  UP |     |     | BSPC |
-// | CTRL |  F7 |  F8 |  F9 | F10 | F11 |   | F12 | LEFT| DOWN| RGT |     |      |
+// |  TAB |  F1 |  F2 |  F3 |  F4 |  F5 |   | F11 |     |  UP |     |     | BSPC |
+// | CTRL |  F6 |  F7 |  F8 |  F9 | F10 |   | F12 | LEFT| DOWN| RGT |     |      |
 // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   |     | CAPS|     |     |     |      |
 //                    | GUI |     | SPC |   | ENT |tog 0| ALT |
             bindings = <
-&kp TAB     &kp F1       &kp F2       &kp F3       &kp F4       &kp F5          &kp F6         &trans           &kp UP       &trans       &trans    &kp BSPC
-&kp LCTRL   &kp F7       &kp F8       &kp F9       &kp F10      &kp F11         &kp F12        &kp LEFT         &kp DOWN     &kp RIGHT    &trans    &trans
-&bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4    &trans         &kp CAPSLOCK     &tog 3       &trans       &trans    &trans
-                                                   &kp LGUI    &trans           &kp SPACE      &kp RET          &tog 0       &kp LALT
+&kp TAB     &kp F1       &kp F2       &kp F3       &kp F4       &kp F5                      &kp F11        &none            &kp UP       &none        &none    &kp BSPC
+&kp LCTRL   &kp F6       &kp F7       &kp F8       &kp F9       &kp F10                     &kp F12        &kp LEFT         &kp DOWN     &kp RIGHT    &none    &none
+&bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                &trans         &kp CAPSLOCK     &to 3        &none        &none    &none
+                                      &kp LGUI     &to 0        &kp SPACE                   &kp RET        &to 0            &kp LALT
             >;
         };
 
         media {
             display-name = "MEDIA";
-
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-            // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-            // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-            //                    | GUI |tog 0| SPC |   | ENT |tog 0| ALT |
-
             bindings = <
-&trans  &trans  &kp C_PREV         &kp C_MUTE        &kp C_NEXT       &trans       &trans  &trans          &trans            &trans        &trans        &trans
-&trans  &trans  &kp C_VOLUME_DOWN  &kp C_PLAY_PAUSE  &kp C_VOLUME_UP  &trans       &trans  &kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI  &trans
-&trans  &trans  &trans             &trans            &trans           &trans       &trans  &trans          &trans            &trans        &trans        &trans
-                                   &kp LGUI          &tog 0           &kp SPACE    &kp RET &tog 0          &kp LALT
+&trans  &none  &kp C_PREV         &kp C_MUTE        &kp C_NEXT       &none                  &none     &none           &none             &none         &none         &trans
+&trans  &none  &kp C_VOLUME_DOWN  &kp C_PLAY_PAUSE  &kp C_VOLUME_UP  &none                  &none     &kp LEFT_SHIFT  &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI  &trans
+&trans  &none  &none              &none             &none            &none                  &none     &none           &none             &none         &none         &trans
+                                  &kp LGUI          &to 0            &kp SPACE              &kp RET   &to 0           &kp LALT
             >;
         };
 
