@@ -26,41 +26,48 @@
         };
 
         tapdance_quotes: tapdance_0 {
-        compatible = "zmk,behavior-tapdance";
-        label = "TAPDANCE_QUOTES";
-        tapdance-bindings = <
-            <&kp SQT>,   // Single tap for single quote (')
-            <&kp DQT>   // Double tap for double quote (")
-            >;
+            compatible = "zmk,behavior-tapdance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            label = "TAPDANCE_QUOTES";
+            tapdance-bindings = 
+                <&kp SQT>,   // Single tap for single quote (')
+                <&kp DQT>   // Double tap for double quote (")
+            ;
         };
 
         tapdance_comma_less: tapdance_1 {
             compatible = "zmk,behavior-tapdance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
             label = "TAPDANCE_COMMA_LESS";
-            tapdance-bindings = <
+            tapdance-bindings = 
                 <&kp COMMA>,   // Single tap for comma (`,`)
                 <&kp LESS>    // Double tap for less than (`<`)
-            >;
+            ;
         };
 
         tapdance_dot_greater: tapdance_2 {
             compatible = "zmk,behavior-tapdance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
             label = "TAPDANCE_DOT_GREATER";
-            tapdance-bindings = <
+            tapdance-bindings =
                 <&kp DOT>,    // Single tap for dot ('.')
                 <&kp GREATER> // Double tap for greater than (`>`)
-            >;
+            ;
         };
 
         tapdance_slash_question: tapdance_3 {
         compatible = "zmk,behavior-tapdance";
+        #binding-cells = <0>;
+        tapping-term-ms = <200>;
         label = "TAPDANCE_SLASH_QUESTION";
-        tapdance-bindings = <
+        tapdance-bindings =
             <&kp SLASH>,      // Single tap for forward slash (/)
             <&kp QUESTION>  // Double tap for question mark (?)
-            >;
+            ;
         };
-   
     };
 
     keymap {
