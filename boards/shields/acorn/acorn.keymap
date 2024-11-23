@@ -38,7 +38,7 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             label = "TAPDANCE_COMMA_LESS";
-            tapdance-bindings = <&kp COMMA>, <&kp LESS>;
+            tapdance-bindings = <&kp COMMA>, <&kp LT>;
         };
 
         tp_dg: tapdance_2 {
@@ -46,7 +46,7 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             label = "TAPDANCE_DOT_GREATER";
-            tapdance-bindings = <&kp DOT>, <&kp GREATER>;
+            tapdance-bindings = <&kp KP_DOT>, <&kp GT>;
         };
 
         tp_sq: tapdance_3 {
@@ -54,7 +54,7 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             label = "TAPDANCE_SLASH_QUESTION";
-            bindings = <&kp SLASH>, <&kp QUESTION>;
+            bindings = <&kp FSLH>, <&kp QMARK>;
         };
 
         td_mt: tap_dance_mod_tap {
@@ -109,7 +109,7 @@
             bindings = <
 &kp TAB     &kp F1       &kp F2       &kp F3       &kp F4       &kp F5                      &kp F11        &none            &kp UP       &none        &none                 &to 3 
 &kp LCTRL   &kp F6       &kp F7       &kp F8       &kp F9       &kp F10                     &kp F12        &kp LEFT         &kp DOWN     &kp RIGHT    &kp C_AC_SCROLL_UP    &kp PG_UP
-&bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                &none         &none            &none        &none        &kp C_AC_SCROLL_DOWN   &kp PG_DN
+&bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                &none          &none            &none        &none        &kp C_AC_SCROLL_DOWN   &kp PG_DN
                                       &kp LGUI     &to 0        &kp SPACE                   &kp RET        &to 0            &kp LALT
             >;
         };
