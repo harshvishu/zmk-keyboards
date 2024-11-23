@@ -25,7 +25,7 @@
             bindings = <&mo>, <&tog>;
         };
 
-        tapdance_quotes: tapdance {
+        tapdance_quotes: tapdance_0 {
         compatible = "zmk,behavior-tapdance";
         label = "TAPDANCE_QUOTES";
         tapdance-bindings = <
@@ -34,7 +34,7 @@
             >;
         };
 
-        tapdance_comma_less: tapdance {
+        tapdance_comma_less: tapdance_1 {
             compatible = "zmk,behavior-tapdance";
             label = "TAPDANCE_COMMA_LESS";
             tapdance-bindings = <
@@ -43,7 +43,7 @@
             >;
         };
 
-        tapdance_dot_greater: tapdance {
+        tapdance_dot_greater: tapdance_2 {
             compatible = "zmk,behavior-tapdance";
             label = "TAPDANCE_DOT_GREATER";
             tapdance-bindings = <
@@ -52,7 +52,7 @@
             >;
         };
 
-        tapdance_slash_question: tapdance {
+        tapdance_slash_question: tapdance_3 {
         compatible = "zmk,behavior-tapdance";
         label = "TAPDANCE_SLASH_QUESTION";
         tapdance-bindings = <
