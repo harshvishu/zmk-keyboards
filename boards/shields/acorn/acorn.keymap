@@ -29,8 +29,8 @@
         compatible = "zmk,behavior-tapdance";
         label = "TAPDANCE_QUOTES";
         tapdance-bindings = <
-            &kp SQT   // Single tap for single quote (')
-            &kp DQT   // Double tap for double quote (")
+            <&kp SQT>,   // Single tap for single quote (')
+            <&kp DQT>   // Double tap for double quote (")
             >;
         };
 
@@ -38,8 +38,8 @@
             compatible = "zmk,behavior-tapdance";
             label = "TAPDANCE_COMMA_LESS";
             tapdance-bindings = <
-                &kp COMMA   // Single tap for comma (`,`)
-                &kp LESS    // Double tap for less than (`<`)
+                <&kp COMMA>,   // Single tap for comma (`,`)
+                <&kp LESS>    // Double tap for less than (`<`)
             >;
         };
 
@@ -47,8 +47,8 @@
             compatible = "zmk,behavior-tapdance";
             label = "TAPDANCE_DOT_GREATER";
             tapdance-bindings = <
-                &kp DOT     // Single tap for dot ('.')
-                &kp GREATER // Double tap for greater than (`>`)
+                <&kp DOT>,    // Single tap for dot ('.')
+                <&kp GREATER> // Double tap for greater than (`>`)
             >;
         };
 
@@ -56,8 +56,8 @@
         compatible = "zmk,behavior-tapdance";
         label = "TAPDANCE_SLASH_QUESTION";
         tapdance-bindings = <
-            &kp SLASH      // Single tap for forward slash (/)
-            &kp QUESTION  // Double tap for question mark (?)
+            <&kp SLASH>,      // Single tap for forward slash (/)
+            <&kp QUESTION>  // Double tap for question mark (?)
             >;
         };
    
