@@ -29,31 +29,27 @@
             compatible = "zmk,behavior-tapdance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            label = "TAPDANCE_QUOTES";
-            tapdance-bindings = <&kp SQT>, <&kp DQT>;
+            bindings = <&kp SQT>, <&kp DQT>;
         };
 
         tp_cl: tapdance_1 {
             compatible = "zmk,behavior-tapdance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            label = "TAPDANCE_COMMA_LESS";
-            tapdance-bindings = <&kp COMMA>, <&kp LT>;
+            bindings = <&kp COMMA>, <&kp LT>;
         };
 
         tp_dg: tapdance_2 {
             compatible = "zmk,behavior-tapdance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            label = "TAPDANCE_DOT_GREATER";
-            tapdance-bindings = <&kp KP_DOT>, <&kp GT>;
+            bindings = <&kp KP_DOT>, <&kp GT>;
         };
 
         tp_sq: tapdance_3 {
             compatible = "zmk,behavior-tapdance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            label = "TAPDANCE_SLASH_QUESTION";
             bindings = <&kp FSLH>, <&kp QMARK>;
         };
 
